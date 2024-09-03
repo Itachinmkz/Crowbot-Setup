@@ -2,9 +2,9 @@
     "color": "#000000",
     "prefix": "+",
     "name": "Krieger",
-    "defaultjoinmessage": "{user} vient de rejoindre. Il a été invité par **{inviter:name}** qui a désormais **{invite} invitations** !",
-    "defaultleavemessage": "{user} vient de quitter. Il avais été invité par **{inviter:name}** qui a désormais **{invite} invitations** ",
-    "defaultLevelmessage": "**{user}** vient de passer au level **{level}** bravo à lui !",
+    "defaultjoinmessage": "{user} vient de rejoindre le serveur. Il a été invité par **{inviter:name}** qui a désormais **{invite} invitations** !",
+    "defaultleavemessage": "{user} vient de quitter le serveur. Il avait été invité par **{inviter:name}** qui a désormais **{invite} invitations** ",
+    "defaultLevelmessage": "**{user}** vient de passer au level **{level}** !",
     "owner": [
         "1151609335126970482", 
         "",
