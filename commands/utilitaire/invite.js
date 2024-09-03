@@ -27,7 +27,7 @@ module.exports = {
 			const embed = new Discord.MessageEmbed()
 			embed.setAuthor('Invitations')
 			embed.setColor(color)
-			embed.setDescription(`<@${member.id}>, Possède actuellement **${inv || 0}** ${inv || 0 > 1 ? "Invite(s)" : "Invite(s)"}\n(**${Regular || 0}** Join(s), **${leaves || 0}** Leave(s)`)
+			embed.setDescription(`<@${member.id}> possède actuellement **${inv || 0}** ${inv || 0 > 1 ? "invitation(s)" : "invitation(s)"}\n(**${Regular || 0}** personne(s) qui ont rejoint, **${leaves || 0}** personne(s) qui ont leave)`)
 			embed.setFooter(`${client.config.name}`)
 			embed.setTimestamp()
 
