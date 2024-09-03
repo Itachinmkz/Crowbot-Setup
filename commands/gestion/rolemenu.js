@@ -36,7 +36,7 @@ module.exports = {
 
                 let menuoptions = [{
                         value: "Style Boutons",
-                        description: "Permet de chosir bouton pour le rolemenu",
+                        description: "Permet de chosir le bouton pour le rolemenu",
                         emoji: "📑"
                     },
                     {
@@ -60,7 +60,7 @@ module.exports = {
                     .setID(message.id + 'MenuSelection')
                     .setMaxValues(1)
                     .setMinValues(1)
-                    .setPlaceholder('Faix un choix');
+                    .setPlaceholder('Fait un choix');
                 menuoptions.forEach(option => {
                     let row = new MessageMenuOption()
                         .setLabel(option.label ? option.label : option.value)
@@ -79,7 +79,7 @@ module.exports = {
                     .setStyle("gray")
                     .setID("rolemenuannuler" + message.id)
                     .setEmoji("❌")
-                    .setLabel("Re formuler votre choix")
+                    .setLabel("Reformuler votre choix")
                 msg.edit("", {
                     embed: embed,
                     components: [
@@ -111,7 +111,7 @@ module.exports = {
 
                 let menuoptions = [{
                         value: "Style Réactions",
-                        description: "Permet de chosir réaction pour le rolemenu",
+                        description: "Permet de choisir la réaction pour le rolemenu",
                         emoji: "📑"
                     },
                     {
@@ -130,13 +130,13 @@ module.exports = {
                         emoji: "🎨"
                     },
                     {
-                        value: "Modifier le text",
+                        value: "Modifier le texte",
                         description: "Permet de choisir le texte",
                         emoji: "📄"
                     },
                     {
-                        value: "Supprimer le text",
-                        description: "Permet de supprimer le text",
+                        value: "Supprimer le texte",
+                        description: "Permet de supprimer le texte",
                         emoji: "📜"
                     },
                     {
@@ -155,7 +155,7 @@ module.exports = {
                     .setID(message.id + 'MenuSelection')
                     .setMaxValues(1)
                     .setMinValues(1)
-                    .setPlaceholder('Faix un choix');
+                    .setPlaceholder('Fait un choix');
                 menuoptions.forEach(option => {
                     let row = new MessageMenuOption()
                         .setLabel(option.label ? option.label : option.value)
@@ -174,7 +174,7 @@ module.exports = {
                     .setStyle("gray")
                     .setID("rolemenuannuler" + message.id)
                     .setEmoji("❌")
-                    .setLabel("Re formuler votre choix")
+                    .setLabel("Reformuler votre choix")
                 msg.edit("", {
                     embed: embed,
                     components: [
@@ -309,12 +309,12 @@ module.exports = {
                             db.set(`rolemenustyle_${message.guild.id}`, "Boutons")
                             updateembed(m)
                             break
-                        case "Supprimer le text":
+                        case "Supprimer le texte":
                             db.delete(`rolemenutext_${message.guild.id}`)
                             updateembed(m)
                             break
-                        case "Modifier le text":
-                            message.channel.send(`Quel est **le nouveau text du bouton ?**`).then(mp => {
+                        case "Modifier le texte":
+                            message.channel.send(`Quel est **le nouveau texte du bouton ?**`).then(mp => {
                                 mp.channel.awaitMessages(response => {
                                         return response.author.id === message.author.id
                                     }, {
@@ -363,7 +363,7 @@ module.exports = {
                                         }).catch(() => {
                                             mp.delete()
                                             cld.first().delete()
-                                            return message.channel.send(`Je n'est pas accès à cette emoji`)
+                                            return message.channel.send(`Je n'ai pas accès à cet émoji`)
 
                                         })
 
@@ -416,7 +416,7 @@ module.exports = {
                             })
                             break
                         case "Modifier le message":
-                            message.channel.send(`Quel est **le salon où ce trouve le message** ?`).then(mp => {
+                            message.channel.send(`Quel est **le salon où se trouve le message** ?`).then(mp => {
                                 mp.channel.awaitMessages(response => {
                                         return response.author.id === message.author.id
                                     }, {
@@ -461,7 +461,7 @@ module.exports = {
                             })
                             break
                         case "Modifier le rôle":
-                            message.channel.send(`Quel est **le rôle a donner** ?`).then(mp => {
+                            message.channel.send(`Quel est **le rôle à donner** ?`).then(mp => {
                                 mp.channel.awaitMessages(response => {
                                         return response.author.id === message.author.id
                                     }, {
@@ -506,7 +506,7 @@ module.exports = {
                                         }).catch(() => {
                                             mp.delete()
                                             cld.first().delete()
-                                            return message.channel.send(`Je n'est pas accès à cette emoji`)
+                                            return message.channel.send(`Je n'ai pas accès à cet émoji`)
 
                                         })
 
