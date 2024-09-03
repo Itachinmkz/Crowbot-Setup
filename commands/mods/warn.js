@@ -29,11 +29,11 @@ module.exports = {
 
 
                 if (!user) return message.channel.send(`Aucun membre trouvé pour \`${args[1] || "rien"}\``)
-                if (user.bot) return message.channel.send(`Vous pouvez pas sanctionnez un bot !`)
-                if (user.id == message.author.id) return message.channel.send(`Vous pouvez pas vous sanctionnez vous même !`)
+                if (user.bot) return message.channel.send(`Vous pouvez pas sanctionner un bot !`)
+                if (user.id == message.author.id) return message.channel.send(`Vous pouvez pas vous sanctionner vous même !`)
 
 
-                if (message.guild.members.cache.get(user.id).roles.highest.position >= message.member.roles.highest.position || user.id === message.guild.owner.id) return message.channel.send(`Cette personnes est plus haute que vous sur le serveur, vous ne pouvez pas la sanctionnez !`)
+                if (message.guild.members.cache.get(user.id).roles.highest.position >= message.member.roles.highest.position || user.id === message.guild.owner.id) return message.channel.send(`Cette personne est plus haute que vous sur le serveur, vous ne pouvez pas la sanctionner !`)
 
                 let res = args.slice(2).join(" ")
 
@@ -203,7 +203,7 @@ module.exports = {
 
                 if (!database || database == []) return message.channel.send(`Aucun membre trouvé avec des sanctions pour \`${args[1] || "rien"}\``)
 
-                if (!database.find(data => data.id === id)) return message.channel.send(`Aucune sanctions trouvé pour \`${args[2] || "rien"}\``)
+                if (!database.find(data => data.id === id)) return message.channel.send(`Aucune sanction trouvé pour \`${args[2] || "rien"}\``)
 
 
 
@@ -217,7 +217,7 @@ module.exports = {
                     db.delete(`info.${message.guild.id}.${user.id}`)
 
                 }
-                message.channel.send(`La sanctions **${args[2]}** a été supprimé`)
+                message.channel.send(`La sanction **${args[2]}** a été supprimé`)
 
             }
             if (args[0] === "clear") {
@@ -232,7 +232,7 @@ module.exports = {
 
                 if (message.guild.members.cache.get(user.id).roles.highest.position >= message.member.roles.highest.position) return
                 const number = db.fetch(`number.${message.guild.id}.${user.id}`)
-                if (!number) return message.channel.send(`Aucune sanctions trouvé`)
+                if (!number) return message.channel.send(`Aucune sanction trouvé`)
 
                 message.channel.send(`${number} ${number > 1 ? "sanctions ont été supprimés" : "sanction à été supprimé"} `)
 
