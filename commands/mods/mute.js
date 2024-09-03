@@ -76,7 +76,9 @@ module.exports = {
                     message.guild.channels.cache.forEach(channel => channel.createOverwrite(muterole, {
                         SEND_MESSAGES: false,
                         CONNECT: false,
-                        ADD_REACTIONS: false
+                        ADD_REACTIONS: false,
+                        CREATE_PUBLIC_THREADS: false,
+                        CREATE_PRIVATE_THREADS: false
                     }, "Muterole"))
                     db.set(`mRole_${message.guild.id}`, `${muterole.id}`)
 
