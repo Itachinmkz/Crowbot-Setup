@@ -19,7 +19,7 @@ module.exports = {
 				.setTimestamp()
 				.setFooter(`${client.config.name}`)
 				.addField("Salon vocal", db.get(`jc_${msg.guild.id}`) === null ? ":x:" : `<#${db.get(`jc_${msg.guild.id}`)}> (${db.get(`jc_${msg.guild.id}`)})`)
-				.addField("Category", db.get(`catggg_${msg.guild.id}`) === null ? ":x:" : `${db.get(`catggg_${msg.guild.id}`)}`)
+				.addField("Catégorie", db.get(`catggg_${msg.guild.id}`) === null ? ":x:" : `${db.get(`catggg_${msg.guild.id}`)}`)
 				.addField("Emoji", db.get(`emote_${msg.guild.id}`) === null ? "Salon de" : `${db.get(`emote_${msg.guild.id}`)}`)
 
 
@@ -40,12 +40,12 @@ module.exports = {
 					emoji: "🛎️"
 				},
 				{
-					value: "Modifier la category",
-					description: "Permet de modifier ma catégorie",
+					value: "Modifier la catégorie",
+					description: "Permet de modifier la catégorie",
 					emoji: "📩"
 				},
 				{
-					value: "Supprimer la category",
+					value: "Supprimer la catégorie",
 					description: "Permet de supprimer la catégorie",
 					emoji: "✉️"
 				},
@@ -67,7 +67,7 @@ module.exports = {
 				.setID(message.id + 'MenuSelection')
 				.setMaxValues(1)
 				.setMinValues(1)
-				.setPlaceholder('Faix un choix');
+				.setPlaceholder('Fait un choix');
 			menuoptions.forEach(option => {
 				let row = new MessageMenuOption()
 					.setLabel(option.label ? option.label : option.value)
@@ -110,7 +110,7 @@ module.exports = {
 				.setTimestamp()
 				.setFooter(`${client.config.name}`)
 				.addField("Salon vocal", db.get(`jc_${message.guild.id}`) === null ? ":x:" : `<#${db.get(`jc_${message.guild.id}`)}> (${db.get(`jc_${message.guild.id}`)})`)
-				.addField("Category", db.get(`catggg_${message.guild.id}`) === null ? ":x:" : `${db.get(`catggg_${message.guild.id}`)}`)
+				.addField("Catégorie", db.get(`catggg_${message.guild.id}`) === null ? ":x:" : `${db.get(`catggg_${message.guild.id}`)}`)
 				.addField("Emoji", db.get(`emote_${message.guild.id}`) === null ? "Salon de " : `${db.get(`emote_${message.guild.id}`)}`)
 
 
@@ -131,12 +131,12 @@ module.exports = {
 					emoji: "🛎️"
 				},
 				{
-					value: "Modifier la category",
-					description: "Permet de modifier ma catégorie",
+					value: "Modifier la catégorie",
+					description: "Permet de modifier la catégorie",
 					emoji: "📩"
 				},
 				{
-					value: "Supprimer la category",
+					value: "Supprimer la catégorie",
 					description: "Permet de supprimer la catégorie",
 					emoji: "✉️"
 				},
@@ -157,7 +157,7 @@ module.exports = {
 				.setID(message.id + 'MenuSelection')
 				.setMaxValues(1)
 				.setMinValues(1)
-				.setPlaceholder('Faix un choix');
+				.setPlaceholder('Fait un choix');
 			menuoptions.forEach(option => {
 				let row = new MessageMenuOption()
 					.setLabel(option.label ? option.label : option.value)
@@ -196,7 +196,7 @@ module.exports = {
 							.setTimestamp()
 							.setFooter(`${client.config.name}`)
 							.addField("Salon vocal", db.get(`jc_${message.guild.id}`) === null ? ":x:" : `<#${db.get(`jc_${message.guild.id}`)}> (${db.get(`jc_${message.guild.id}`)})`)
-							.addField("Category", db.get(`catggg_${message.guild.id}`) === null ? ":x:" : `${db.get(`catggg_${message.guild.id}`)}`)
+							.addField("Catégorie", db.get(`catggg_${message.guild.id}`) === null ? ":x:" : `${db.get(`catggg_${message.guild.id}`)}`)
 							.addField("Emoji", db.get(`emote_${message.guild.id}`) === null ? "Salon de " : `${db.get(`emote_${message.guild.id}`)}`)
 					})
 					// message.channel.send(embeds)
@@ -217,7 +217,7 @@ module.exports = {
 				function menuselection(menu) {
 					switch (menu.values[0]) {
 						case "Configuration automatique":
-							message.channel.send(`Création de la **catégorie** des salons personnalisé en cours..`).then(msge => {
+							message.channel.send(`Création de la **catégorie** des salons personnalisés en cours..`).then(msge => {
 								message.guild.channels.create('Salon temporaire', {
 										type: 'category',
 										permissionsOverwrites: [{
@@ -241,7 +241,7 @@ module.exports = {
 										db.set(`jc_${message.guild.id}`, v.id)
 										db.set(`tempomodule_${message.guild.id}`, true)
 										updateembed(m)
-										msge.edit(`Création de la **catégorie** des salons personnalisé effectué avec succès.`).then(msgee => msgee.delete({
+										msge.edit(`Création de la **catégorie** des salons personnalisés effectué avec succès.`).then(msgee => msgee.delete({
 											timeout: 2500,
 											reason: ''
 										}));
@@ -277,8 +277,8 @@ module.exports = {
 							db.delete(`jc_${message.guild.id}`)
 							updateembed(m)
 							break
-						case "Modifier la category":
-							message.channel.send(`Quel est **la nouvelle category** ?`).then(mp => {
+						case "Modifier la catégorie":
+							message.channel.send(`Quel est **la nouvelle catégorie** ?`).then(mp => {
 								mp.channel.awaitMessages(response => {
 										return response.author.id === message.author.id
 									}, {
@@ -290,7 +290,7 @@ module.exports = {
 
 										var msg = cld.first();
 										var role = message.guild.channels.cache.get(msg.content) || msg.mentions.channels.first()
-										if (!role) return message.channel.send(`Aucune category trouvé pour \`${msg.content}\`.`);
+										if (!role) return message.channel.send(`Aucune catégorie trouvé pour \`${msg.content}\`.`);
 
 										db.set(`catggg_${message.guild.id}`, role.id)
 										mp.delete()
@@ -300,7 +300,7 @@ module.exports = {
 									});
 							})
 							break
-						case "Supprimer la category":
+						case "Supprimer la catégorie":
 							db.delete(`catggg_${message.guild.id}`)
 							updateembed(m)
 							break
