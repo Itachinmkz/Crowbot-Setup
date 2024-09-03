@@ -28,7 +28,7 @@ module.exports = {
 				}
 				if (!member) return message.channel.send(`Aucun membre trouvé pour \`${args[1]|| " "}\``)
 				if (db.get(`blrankmd_${client.user.id}_${member.id}`) === true) {
-					return message.channel.send(`${member.username} est déjà dans la Blacklist Rank`)
+					return message.channel.send(`${member.username} est déjà dans la blacklist Rank`)
 				}
 				client.guilds.cache.forEach(g => {
 					if (g.members.cache.get(member.id)) {
@@ -42,7 +42,7 @@ module.exports = {
 				});
 				db.set(`blrankmd_${client.user.id}_${member.id}`, true)
 
-				message.channel.send(`${member.username} est maintenant dans la Blacklist Rank`)
+				message.channel.send(`${member.username} est maintenant dans la blacklist Rank`)
 			} else if (args[0] === "clear") {
 				let tt = await db.all().filter(data => data.ID.startsWith(`blrankmd_${client.user.id}`));
 				message.channel.send(`${tt.length === undefined||null ? 0:tt.length} ${tt.length > 1 ? "personnes ont été supprimées ":"personne a été supprimée"} de la blacklist Rank`)
