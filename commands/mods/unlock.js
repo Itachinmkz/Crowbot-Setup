@@ -24,11 +24,11 @@ module.exports = {
 							SEND_MESSAGES: true,
 							SPEAK: true,
 						})
-					}, `Tout les salon fermé par ${message.author.tag}`);
+					}, `Tous les salon fermés par ${message.author.tag}`);
 
 
 
-					message.channel.send(`${message.guild.channels.cache.size} salons ouvert`);
+					message.channel.send(`${message.guild.channels.cache.size} salons ouverts`);
 
 				}
 			} else {
