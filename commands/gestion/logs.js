@@ -64,7 +64,7 @@ module.exports = {
 				.setID(message.id + 'MenuSelection')
 				.setMaxValues(1)
 				.setMinValues(1)
-				.setPlaceholder('Faix un choix');
+				.setPlaceholder('Fait un choix');
 			menuoptions.forEach(option => {
 				let row = new MessageMenuOption()
 					.setLabel(option.label ? option.label : option.value)
@@ -149,7 +149,7 @@ module.exports = {
 				.setID(message.id + 'MenuSelection')
 				.setMaxValues(1)
 				.setMinValues(1)
-				.setPlaceholder('Faix un choix');
+				.setPlaceholder('Fait un choix');
 			menuoptions.forEach(option => {
 				let row = new MessageMenuOption()
 					.setLabel(option.label ? option.label : option.value)
