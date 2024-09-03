@@ -47,7 +47,7 @@ module.exports = {
                                 //.setTitle(`<:protection:847072581382438953> Modération • Type: **\`bannissement\`**`)
                                 //.setTimestamp()
                                 //.setDescription(` **Bannissement de**: ${user}\n**Auteur**: ${message.author} \n**Salon**: ${message.channel}\n**Temps de réponse**: ${client.ws.ping}ms`)
-                                .setDescription(`${message.author} a **unban** tout les membres bannis`))
+                                .setDescription(`${message.author} a **unban** tous les membres bannis`))
 
                         }
                     })
