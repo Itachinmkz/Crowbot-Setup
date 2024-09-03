@@ -52,7 +52,7 @@ module.exports = {
 				.setID(message.id + 'MenuSelection')
 				.setMaxValues(1)
 				.setMinValues(1)
-				.setPlaceholder('Faix un choix');
+				.setPlaceholder('Fait un choix');
 			menuoptions.forEach(option => {
 				let row = new MessageMenuOption()
 					.setLabel(option.label ? option.label : option.value)
@@ -110,7 +110,7 @@ module.exports = {
 				},
 				{
 					value: "Modifier le statut",
-					description: "Permet de choisir le status",
+					description: "Permet de choisir le statut",
 					emoji: "📩"
 				},
 				{
@@ -126,7 +126,7 @@ module.exports = {
 				.setID(message.id + 'MenuSelection')
 				.setMaxValues(1)
 				.setMinValues(1)
-				.setPlaceholder('Faix un choix');
+				.setPlaceholder('Fait un choix');
 			menuoptions.forEach(option => {
 				let row = new MessageMenuOption()
 					.setLabel(option.label ? option.label : option.value)
@@ -192,7 +192,7 @@ module.exports = {
 
 										var msg = cld.first();
 										var role = message.guild.roles.cache.get(msg.content) || msg.mentions.roles.first()
-										if (!role) return message.channel.send(`Aucun rôles trouvé pour \`${msg.content}\`.`);
+										if (!role) return message.channel.send(`Aucun rôle trouvé pour \`${msg.content}\`.`);
 
 										db.set(`rolesupp_${message.guild.id}`, role.id)
 										mp.delete()
