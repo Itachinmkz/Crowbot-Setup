@@ -58,7 +58,7 @@ module.exports = {
 					}
 					if (!member) return message.channel.send(`Aucun membre trouvé pour \`${args[1]|| " "}\``)
 					if (db.get(`wlmd_${message.guild.id}_${member.user.id}`) === null) {
-						return message.channel.send(`<@${member.id}> n'est pas whitlist`)
+						return message.channel.send(`<@${member.id}> n'est pas whitelist`)
 					}
 					db.delete(`wlmd_${message.guild.id}_${member.user.id}`)
 					message.channel.send(`<@${member.id}> n'est plus whitelist`)
