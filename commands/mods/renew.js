@@ -30,7 +30,7 @@ module.exports = {
 							rateLimitPerUser: channele.rateLimitPerUser,
 							permissions: channele.withPermissions,
 							position: channele.rawPosition,
-							reason: `Tout les salon ont été recréé par ${message.author.tag} (${message.author.id})`
+							reason: `Tous les salons ont été recrées par ${message.author.tag} (${message.author.id})`
 						})
 						.catch(err => {})
 					channele.delete().catch(err => {})
@@ -61,10 +61,10 @@ module.exports = {
 							rateLimitPerUser: channel.rateLimitPerUser,
 							permissions: channel.withPermissions,
 							position: channel.rawPosition,
-							reason: `le salon a été recréé par ${message.author.tag} (${message.author.id})`
+							reason: `Le salon a été recrée par ${message.author.tag} (${message.author.id})`
 						})
 						channel.delete()
-						ee.send(`${message.author} le salon a été recréé`)
+						ee.send(`Salon recrée par ${message.author}`)
 					} catch (error) {
 						return;
 					}
@@ -82,16 +82,16 @@ module.exports = {
 							rateLimitPerUser: channel.rateLimitPerUser,
 							permissions: channel.withPermissions,
 							position: channel.rawPosition,
-							reason: `le salon a été recréé par ${message.author.tag} (${message.author.id})`
+							reason: `Salon récrée par ${message.author.tag} (${message.author.id})`
 						})
 						channel.delete()
-						ee.send(`${message.author} le salon a été recréé`)
+						ee.send(`Salon recrée par ${message.author}`)
 
 					} catch (error) {
 						return;
 					}
 
-					message.channel.send("le salon a été recréé : " + channel.name)
+					message.channel.send("Le salon a été recrée : " + channel.name)
 				}
 
 
