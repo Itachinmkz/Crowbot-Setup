@@ -60,7 +60,7 @@ module.exports = {
 				} else if (args[1].toLowerCase() === "clear") {
 					db.delete(`backupemoji_${client.user.id}`)
 
-					return message.channel.send(`Toute les Backups d'emoji ont était supprimés.`);
+					return message.channel.send(`Toutes les backups d'emoji ont été supprimées.`);
 
 				} else if (args[1].toLowerCase() === "load") {
 					let timeout = 2400000;
@@ -68,7 +68,7 @@ module.exports = {
 					if (daily != null && daily >= Date.now()) {
 
 
-						message.channel.send(`Une backup à déjà été charger sur le serveur, re essayer dans ${duration(daily - Date.now())} !`)
+						message.channel.send(`Une backup a déjà été chargé sur le serveur, reessayez dans ${duration(daily - Date.now())} !`)
 					} else {
 						let code = args[2]
 						if (!code) return
