@@ -41,7 +41,7 @@ module.exports = {
 				message.channel.send(`Rôle ajouté !`)
 			}).catch(() => {
 
-				message.channel.send(`Je n'est pas pu ajouté ce rôle à **${rMember.tag}** !`)
+				message.channel.send(`Je n'ai pas pu ajouter ce rôle à **${rMember.tag}** !`)
 
 			})
 		}
