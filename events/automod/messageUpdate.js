@@ -77,7 +77,7 @@ module.exports = async (client, oldMessage, newMessage) => {
 				oldMessage.roles.add(muterole.id).catch(err => [])
 				const embed = new Discord.MessageEmbed()
 					.setColor(color)
-					.setDescription(`${oldMessage} a été **mute 15minutes** pour avoir \`spam des invitations\``)
+					.setDescription(`${oldMessage} a été **mute 15 minutes** pour avoir \`spam des invitations\``)
 				if (raidlog) raidlog.send(embed)
 			} else
 			if (db.get(`warn_${oldMessage.id}`) <= 5) {
