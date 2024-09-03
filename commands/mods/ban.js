@@ -9,7 +9,7 @@ const db = require("quick.db")
 
 function bantime(message, user, time, authorcooldown) {
 	message.guild.members.ban(user.id, {
-		reason: `Bannis par ${message.author.tag} pour: Sans raison`,
+		reason: `Banni par ${message.author.tag} pour: Sans raison`,
 		days: 7
 	}).then(r => {
 		authorcooldown.limit++
@@ -24,7 +24,7 @@ function bantime(message, user, time, authorcooldown) {
 
 function bantimereason(message, user, time, authorcooldown, reason) {
 	message.guild.members.ban(user.id, {
-		reason: `Bannis par ${message.author.tag} pour: ${reason}`,
+		reason: `Banni par ${message.author.tag} pour: ${reason}`,
 		days: 7
 	}).then(r => {
 		authorcooldown.limit++
@@ -39,7 +39,7 @@ function bantimereason(message, user, time, authorcooldown, reason) {
 
 function ban(message, user, authorcooldown) {
 	message.guild.members.ban(user.id, {
-		reason: `Bannis par ${message.author.tag} pour: Sans raison`,
+		reason: `Banni par ${message.author.tag} pour: Sans raison`,
 		days: 7
 	}).then(r => {
 		authorcooldown.limit++
@@ -51,7 +51,7 @@ function ban(message, user, authorcooldown) {
 
 function banreason(message, user, authorcooldown, reason) {
 	message.guild.members.ban(user.id, {
-		reason: `Bannis par ${message.author.tag} pour: ${reason}`,
+		reason: `Banni par ${message.author.tag} pour: ${reason}`,
 		days: 7
 	}).then(r => {
 		authorcooldown.limit++
@@ -80,7 +80,7 @@ module.exports = {
 					limit: 0
 				}
 				var authorcooldown = cooldown[message.author.id]
-				if (authorcooldown.limit > 2) return message.channel.send(`Vous avez atteint votre limite de **bannisement**, veuillez retenter plus tard!`);
+				if (authorcooldown.limit > 2) return message.channel.send(`Vous avez atteint votre limite de **bannisements**, veuillez retenter plus tard!`);
 
 				//var user = message.mentions.users.first() || client.users.cache.get(args[0])
 				var user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
