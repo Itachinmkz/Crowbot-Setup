@@ -43,7 +43,7 @@ module.exports = {
 						//       .setTitle(`<:protection:847072581382438953> Modération • Type: **\`derank\`**`)
 						//     .setTimestamp() 
 						//   .setDescription(`**Derank de**: ${user}\n**Auteur**: ${message.author}\n**Temps de réponse**: ${client.ws.ping}ms`)
-						.setDescription(`${message.author} à **derank** ${user.user}`)
+						.setDescription(`${message.author} a **derank** ${user.user}`)
 					)
 				}
 			}
