@@ -43,10 +43,10 @@ module.exports = {
 **1・Changer le nom d'utilisateur**
 Actuel: \`${client.user.username}\`
 
-**2・Changer l'avatar**
+**2・Changer la photo de profil**
 Actuel: [\`Clique ici\`](${client.user.displayAvatarURL()})
 
-**3・Changer l'activitée**
+**3・Changer l'activité du bot**
 Actuel: \`${client.user.presence.activities[0] ? `${activity[client.user.presence.activities[0].type]} ${client.user.presence.activities[0].name}` : `❌`}\`  
 
 **4・Changer la presence du bot**
@@ -117,7 +117,7 @@ Actuel: ${secur(db.get(`antijoinbot_${client.user.id}`))}
                                 client.user.setUsername(collected.first().content).catch(async (err) => {
 
                                     collected.first().delete()
-                                    message.channel.send("Je ne peux pas changer de pseudo pour l'instant, veuillez réessayer plus tard").then((mm) => mm.delete({
+                                    message.channel.send("Je ne peux pas changer de pseudo pour l'instant, veuillez réessayez plus tard").then((mm) => mm.delete({
                                         timeout: 5000
                                     }));
                                 }).then(async () => {
@@ -129,7 +129,7 @@ Actuel: ${secur(db.get(`antijoinbot_${client.user.id}`))}
                         if (button.id === "deuxpr" + message.id) {
 
                             button.reply.defer(true)
-                            let question = await message.channel.send("Quel est **le nouvelle avatar du bot ?** (*liens*)")
+                            let question = await message.channel.send("Quel est **la nouvelle photo de profil du bot ?** (*liens*)")
                             const filter = m => message.author.id === m.author.id;
                             message.channel.awaitMessages(filter, {
                                 max: 1,
@@ -141,7 +141,7 @@ Actuel: ${secur(db.get(`antijoinbot_${client.user.id}`))}
                                 client.user.setAvatar(collected.first().content).catch(async (err) => {
 
                                     collected.first().delete()
-                                    message.channel.send("Je ne peux pas changer de phote de profil pour l'instant, veuillez réessayer plus tard").then((mm) => mm.delete({
+                                    message.channel.send("Je ne peux pas changer de phote de profil pour l'instant, veuillez réessayez plus tard").then((mm) => mm.delete({
                                         timeout: 5000
                                     }));
                                 }).then(async () => {
@@ -153,7 +153,7 @@ Actuel: ${secur(db.get(`antijoinbot_${client.user.id}`))}
                         if (button.id === "troispr" + message.id) {
 
                             button.reply.defer(true)
-                            let question = await message.channel.send("Quel est **le nouveau type d'activiter du bot ?** (\`play\`, \`stream\`, \`watch\`, \`listen\`)")
+                            let question = await message.channel.send("Quel est **le nouveau type d'activité du bot ?** (\`play\`, \`stream\`, \`watch\`, \`listen\`)")
                             const filter = m => message.author.id === m.author.id;
 
                             message.channel.awaitMessages(filter, {
@@ -177,7 +177,7 @@ Actuel: ${secur(db.get(`antijoinbot_${client.user.id}`))}
                                     return message.channel.send("Type d'activité invalide ! Recommence !")
                                 }
 
-                                let question2 = await message.channel.send("Quel est **la nouvelle activiter du bot ?** (*message*)")
+                                let question2 = await message.channel.send("Quel est **la nouvelle activité du bot ?** (*message*)")
 
                                 message.channel.awaitMessages(filter, {
                                     max: 1,
