@@ -30,7 +30,6 @@ module.exports = {
 - \`${client.config.prefix}pic [membre]\`
 - \`${client.config.prefix}snipe\`
 - \`${client.config.prefix}ping\`
-- \`${client.config.prefix}serverinfo [guild\`
 - \`${client.config.prefix}userinfo [user]\`
 - \`${client.config.prefix}top [rank]\`
 - \`${client.config.prefix}help\`
@@ -156,7 +155,6 @@ module.exports = {
 
 			util.addField(`\`${prefix}ping\``, "Permet de voir la latence du bot et du websocket en ms")
 				if (2 <= perm) util.addField(`\`${prefix}roleinfo <rôle>\``, "Permet d'avoir des informations sur un rôle")
-			util.addField(`\`${prefix}serverinfo [guild]\``, "Permet d'avoir des informations sur un serveur où se trouve le bot")
 			util.addField(`\`${prefix}snipe\``, "Permet de voir le dernier message supprimé")
 			util.addField(`\`${prefix}top [rank]\``, "Permet de voir un classement d'invitations ou de rank")
 			util.addField(`\`${prefix}userinfo [user]\``, "Permet d'avoir des informations sur un utilisateur")
