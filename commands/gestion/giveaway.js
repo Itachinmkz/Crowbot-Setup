@@ -94,18 +94,18 @@ module.exports = {
 							emoji: "🏷️"
 						},
 						{
-							value: "Modifier le gagnants imposer",
-							description: "Permet de choisir le gagnant imposer",
+							value: "Modifier le gagnant imposé",
+							description: "Permet de choisir le gagnant imposé",
 							emoji: "🕵️"
 						},
 						{
-							value: "Supprimer le gagnants imposer",
-							description: "Permet de supprimer le gagnant imposer",
+							value: "Supprimer le gagnants imposé",
+							description: "Permet de supprimer le gagnant imposé",
 							emoji: "🕵️"
 						},
 						{
-							value: "Modifier la presence en vocal obligatoire",
-							description: "Permet de choisir si il faut être en vocal ou non",
+							value: "Modifier la présence en vocal obligatoire",
+							description: "Permet de choisir s'il faut être en vocal ou non",
 							emoji: "🔊"
 						},
 						{
@@ -120,7 +120,7 @@ module.exports = {
 						},
 						{
 							value: "Modifier le nombre de gagnants",
-							description: "Permet de choisir le nombre de gagnant",
+							description: "Permet de choisir le nombre de gagnants",
 							emoji: "👤"
 						},
 						{
@@ -205,18 +205,18 @@ module.exports = {
 							emoji: "🏷️"
 						},
 						{
-							value: "Modifier le gagnants imposer",
-							description: "Permet de choisir le gagnant imposer",
+							value: "Modifier le gagnant imposé",
+							description: "Permet de choisir le gagnant imposé",
 							emoji: "🕵️"
 						},
 						{
-							value: "Supprimer le gagnants imposer",
-							description: "Permet de supprimer le gagnant imposer",
+							value: "Supprimer le gagnant imposé",
+							description: "Permet de supprimer le gagnant imposé",
 							emoji: "🕵️"
 						},
 						{
-							value: "Modifier la presence en vocal obligatoire",
-							description: "Permet de choisir si il faut être en vocal ou non",
+							value: "Modifier la présence en vocal obligatoire",
+							description: "Permet de choisir s'il faut être en vocal ou non",
 							emoji: "🔊"
 						},
 						{
@@ -375,8 +375,8 @@ module.exports = {
 								var embed = new Discord.MessageEmbed()
 									.setTitle(db.get(`gain${message.guild.id}`))
 									.setDescription(`
-Gagnant: ${winner}
-Crée par: ${message.author}`)
+Gagnant : ${winner}
+Crée par : ${message.author}`)
 									.setColor(color)
 									.setFooter(`Finis`)
 									.setTimestamp(Date.now())
@@ -467,7 +467,7 @@ Crée par: ${message.author}`)
 								})
 								break
 
-							case "Modifier le gagnants imposer":
+							case "Modifier le gagnant imposé":
 								message.channel.send(`Quel est **le nouveau gagnants imposer** ?`).then(mp => {
 									mp.channel.awaitMessages(response => {
 											return response.author.id === message.author.id
@@ -490,7 +490,7 @@ Crée par: ${message.author}`)
 								})
 								break
 
-							case "Supprimer le gagnants imposer":
+							case "Supprimer le gagnant imposé":
 								db.delete(`imposer${message.guild.id}`)
 								updateembed(m)
 
@@ -499,7 +499,7 @@ Crée par: ${message.author}`)
 								break
 
 
-							case "Modifier la presence en vocal obligatoire":
+							case "Modifier la présence en vocal obligatoire":
 								if (db.get(`presencevocal${message.guild.id}`) === null) {
 									db.set(`presencevocal${message.guild.id}`, true)
 									updateembed(m)
@@ -512,7 +512,7 @@ Crée par: ${message.author}`)
 								break
 
 							case "Modifier le nombre de gagnants":
-								message.channel.send(`Quel est **le nouveau nombtre gagnants** ?`).then(mp => {
+								message.channel.send(`Quel est **le nouveau nombre de gagnants** ?`).then(mp => {
 									mp.channel.awaitMessages(response => {
 											return response.author.id === message.author.id
 										}, {
@@ -558,7 +558,7 @@ Crée par: ${message.author}`)
 											}).catch(() => {
 												mp.delete()
 												cld.first().delete()
-												return message.channel.send(`Je n'est pas accès à cette emoji`)
+												return message.channel.send(`Je n'ai accès à cet émoji`)
 
 											})
 
