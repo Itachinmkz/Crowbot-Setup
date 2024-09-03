@@ -23,11 +23,11 @@ module.exports = {
 				const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[1]);
 				if (!role) return message.channel.send(`Aucun rôle trouver pour \`${args[1] || " "}\``)
 				let count = 0
-				message.channel.send(`Je suis entrain d'ajouté le rôle \`${role}\` à ${message.guild.memberCount} utilisateur...`)
+				message.channel.send(`Je suis entrain d'ajouter le rôle \`${role}\` à ${message.guild.memberCount} utilisateur(s)...`)
 				message.guild.members.cache.forEach(member => setInterval(() => {
 					count++
 					if (member) member.roles.add(role, `Masiverole par ${message.author.tag}`).catch()
-					if (count === message.guild.memberCount) return message.channel.send(`J'effectue la tâche, Merci de patienter ${message.guild.memberCount > 1 ? `J'ajoute le rôle à ${message.guild.memberCount} membres` : `J'ajoute le rôle à membres ${message.guild.memberCount} membre`}`);
+					if (count === message.guild.memberCount) return message.channel.send(`J'effectue la tâche, merci de patienter ${message.guild.memberCount > 1 ? `J'ajoute le rôle à ${message.guild.memberCount} membres` : `J'ajoute le rôle à membres ${message.guild.memberCount} membre`}`);
 				}), 250)
 
 
@@ -35,11 +35,11 @@ module.exports = {
 				const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[1]);
 				if (!role) return message.channel.send(`Aucun rôle trouver pour \`${args[1] || " "}\``)
 				let count = 0
-				message.channel.send(`Je suis entrain d'enlevé le rôle \`${role}\` à ${message.guild.memberCount} utilisateur...`)
+				message.channel.send(`Je suis entrain d'enlever le rôle \`${role}\` à ${message.guild.memberCount} utilisateur(s)...`)
 				message.guild.members.cache.forEach(member => setInterval(() => {
 					count++
 					if (member) member.roles.remove(role, `Massiverole par ${message.author.tag}`).catch()
-					if (count === message.guild.memberCount) return message.channel.send(`J'effectue la tâche, Merci de patienter ${message.guild.memberCount > 1 ? `J'enleve le rôle à ${message.guild.memberCount} membres` : `J'enleve le rôle à membres ${message.guild.memberCount} membre`}`);
+					if (count === message.guild.memberCount) return message.channel.send(`J'effectue la tâche, merci de patienter ${message.guild.memberCount > 1 ? `J'enleve le rôle à ${message.guild.memberCount} membres` : `J'enleve le rôle à membres ${message.guild.memberCount} membre`}`);
 				}), 250);
 
 			}
