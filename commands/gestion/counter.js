@@ -27,12 +27,12 @@ module.exports = {
 
 			let menuoptions = [{
 					value: "Configuration automatique (création de tout les salons vocaux)",
-					description: "Permet de crée automatiquement tout les salons vocal",
+					description: "Permet de créer automatiquement tout les salons vocal",
 					emoji: "🔰"
 				},
 				{
 					value: "Modifier le compteur de membres",
-					description: "Permet de crée le compteur Membres",
+					description: "Permet de créer le compteur Membres",
 					emoji: "👤"
 				},
 				{
@@ -43,7 +43,7 @@ module.exports = {
 
 				{
 					value: "Modifier le compteur de membres en ligne",
-					description: "Permet de crée le compteur En Ligne",
+					description: "Permet de créer le compteur En Ligne",
 					emoji: "🌟"
 				},
 				{
@@ -54,7 +54,7 @@ module.exports = {
 
 				{
 					value: "Modifier le compteur de membres en vocal",
-					description: "Permet de crée le compteur En Vocal",
+					description: "Permet de créer le compteur En Vocal",
 					emoji: "🎧"
 				},
 				{
@@ -65,7 +65,7 @@ module.exports = {
 
 				{
 					value: "Modifier le compteur de boost",
-					description: "Permet de crée le compteur Boost",
+					description: "Permet de créer le compteur Boost",
 					emoji: "💎"
 				},
 				{
@@ -132,12 +132,12 @@ module.exports = {
 
 			let menuoptions = [{
 					value: "Configuration automatique",
-					description: "Permet de crée automatiquement tout les salons vocal",
+					description: "Permet de créer automatiquement tous les salons vocals",
 					emoji: "🔰"
 				},
 				{
 					value: "Modifier le compteur de membres",
-					description: "Permet de crée le compteur Membres",
+					description: "Permet de créer le compteur Membres",
 					emoji: "👤"
 				},
 				{
@@ -148,7 +148,7 @@ module.exports = {
 
 				{
 					value: "Modifier le compteur de membres en ligne",
-					description: "Permet de crée le compteur En Ligne",
+					description: "Permet de créer le compteur En Ligne",
 					emoji: "🌟"
 				},
 				{
@@ -159,7 +159,7 @@ module.exports = {
 
 				{
 					value: "Modifier le compteur de membres en vocal",
-					description: "Permet de crée le compteur En Vocal",
+					description: "Permet de créer le compteur En Vocal",
 					emoji: "🎧"
 				},
 				{
@@ -170,7 +170,7 @@ module.exports = {
 
 				{
 					value: "Modifier le compteur de boost",
-					description: "Permet de crée le compteur Boost",
+					description: "Permet de créer le compteur Boost",
 					emoji: "💎"
 				},
 				{
@@ -300,7 +300,7 @@ module.exports = {
 												}).then(boost => {
 													db.set(`boost_${message.guild.id}`, boost.id)
 
-													msge.edit(`Création de la **catégorie** des Compteurs effectué avec succès.`)
+													msge.edit(`Création de la **catégorie** des compteurs effectué avec succès.`)
 													updateembed(m)
 
 												})
@@ -323,7 +323,7 @@ module.exports = {
 										var msg = cld.first();
 										var role = message.guild.channels.cache.get(msg.content) || msg.mentions.channels.first()
 										if (!role) return message.channel.send(`Aucun salon trouvé pour \`${msg.content}\`.`);
-										message.channel.send(`Quel est **le format du Compteur de membres ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de membres)`).then(mpe => {
+										message.channel.send(`Quel est **le format du compteur de membres ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de membres)`).then(mpe => {
 											mpe.channel.awaitMessages(response => {
 													return response.author.id === message.author.id
 												}, {
@@ -373,7 +373,7 @@ module.exports = {
 										var msg = cld.first();
 										var role = message.guild.channels.cache.get(msg.content) || msg.mentions.channels.first()
 										if (!role) return message.channel.send(`Aucun salon trouvé pour \`${msg.content}\`.`);
-										message.channel.send(`Quel est **le format du Compteur de membres en ligne  ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de membres)`).then(mpe => {
+										message.channel.send(`Quel est **le format du compteur de membres en ligne  ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de membres)`).then(mpe => {
 											mpe.channel.awaitMessages(response => {
 													return response.author.id === message.author.id
 												}, {
@@ -423,7 +423,7 @@ module.exports = {
 										var msg = cld.first();
 										var role = message.guild.channels.cache.get(msg.content) || msg.mentions.channels.first()
 										if (!role) return message.channel.send(`Aucun salon trouvé pour \`${msg.content}\`.`);
-										message.channel.send(`Quel est **le format du Compteur de membres en vocal  ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de membres)`).then(mpe => {
+										message.channel.send(`Quel est **le format du compteur de membres en vocal  ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de membres)`).then(mpe => {
 											mpe.channel.awaitMessages(response => {
 													return response.author.id === message.author.id
 												}, {
@@ -473,7 +473,7 @@ module.exports = {
 										var msg = cld.first();
 										var role = message.guild.channels.cache.get(msg.content) || msg.mentions.channels.first()
 										if (!role) return message.channel.send(`Aucun salon trouvé pour \`${msg.content}\`.`);
-										message.channel.send(`Quel est **le format du Compteur de boost  ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de boost)`).then(mpe => {
+										message.channel.send(`Quel est **le format du compteur de boost  ?** (Mettez \`default\` pour le mettre par default, Mettez \`<count>\` pour le nombre de boost)`).then(mpe => {
 											mpe.channel.awaitMessages(response => {
 													return response.author.id === message.author.id
 												}, {
