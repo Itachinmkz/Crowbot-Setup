@@ -1,12 +1,11 @@
 const Discord = require("discord.js");
-const ms = require("ms");
 const db = require("quick.db");
 
 module.exports = {
     name: 'mute',
     aliases: [],
     run: async (client, message, args, prefix, color) => {
-
+        // Vérifier les permissions
         let perm = "";
         message.member.roles.cache.forEach(role => {
             if (db.get(`modsp_${message.guild.id}_${role.id}`)) perm = true;
@@ -15,7 +14,6 @@ module.exports = {
         });
 
         if (client.config.owner.includes(message.author.id) || db.get(`ownermd_${client.user.id}_${message.author.id}`) === true || perm) {
-
             if (args[0]) {
                 let chx = db.get(`logmod_${message.guild.id}`);
                 const logsmod = message.guild.channels.cache.get(chx);
@@ -36,12 +34,12 @@ module.exports = {
 
                 if (authorcooldown.limit >= 5) return message.channel.send(`Vous avez atteint votre limite de **mute**, veuillez retenter plus tard!`);
 
+                // Défini le timeout au maximum autorisé (28 jours)
+                const maxTimeoutDuration = 28 * 24 * 60 * 60 * 1000; // 28 jours en millisecondes
+                const timeoutDuration = maxTimeoutDuration;
+
+                // Récupère la raison (si fournie)
                 var reason = args.slice(1).join(" ") || "Aucune raison spécifiée";
-                var time = ms(args[1]);
-
-                if (!time) return message.channel.send(`Durée incorrecte: \`${args[1]}\``);
-
-                const timeoutDuration = time;
 
                 try {
                     await user.timeout(timeoutDuration, `Mute par ${message.author.tag} pour: ${reason}`);
@@ -55,6 +53,7 @@ module.exports = {
                         .setDescription(`${message.author} a **mute** ${user} pour \`${ms(timeoutDuration, { long: true })}\` pour \`${reason}\``)
                     );
 
+                    // Réinitialise le statut de mute après la durée
                     setTimeout(() => {
                         db.set(`mute_${message.guild.id}_${user.id}`, false);
                     }, timeoutDuration);
