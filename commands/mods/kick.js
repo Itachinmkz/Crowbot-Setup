@@ -11,7 +11,7 @@ const db = require("quick.db")
 
 
 function kick(message, user, authorcooldown) {
-	message.guild.members.cache.get(user.id).kick(`Expulser par ${message.author.tag} pour: Sans raison`).then(r => {
+	message.guild.members.cache.get(user.id).kick(`Expulsé par ${message.author.tag} pour: Sans raison`).then(r => {
 		authorcooldown.limit++
 		setTimeout(() => {
 			authorcooldown.limit = authorcooldown.limit - 1
@@ -20,7 +20,7 @@ function kick(message, user, authorcooldown) {
 };
 
 function kickreason(message, user, authorcooldown, reason) {
-	message.guild.members.cache.get(user.id).kick(`Expulser par ${message.author.tag} pour: ${reason}`).then(r => {
+	message.guild.members.cache.get(user.id).kick(`Expulsé par ${message.author.tag} pour: ${reason}`).then(r => {
 		authorcooldown.limit++
 		setTimeout(() => {
 			authorcooldown.limit = authorcooldown.limit - 1
