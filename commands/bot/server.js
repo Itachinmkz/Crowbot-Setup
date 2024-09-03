@@ -66,7 +66,7 @@ module.exports = {
 					if (guild) {
 						let tChannel = guild.channels.cache.find(ch => ch.type == "text" && ch.permissionsFor(ch.guild.me).has("CREATE_INSTANT_INVITE"));
 						if (!tChannel) {
-							return message.channel.send(`Aucun salon trouvé pour \`crée une invitation du serveur\``);
+							return message.channel.send(`Aucun salon trouvé pour \`créer une invitation du serveur\``);
 						}
 						let invite = await tChannel.createInvite({
 							temporary: false,
