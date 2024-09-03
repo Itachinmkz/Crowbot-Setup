@@ -30,7 +30,7 @@ module.exports = {
 		if (client.config.owner.includes(message.author.id) || db.get(`ownermd_${client.user.id}_${message.author.id}`) === true || perm || db.get(`channelpublic_${message.guild.id}_${message.channel.id}`) === true) {
 			
 			let embeed = new Discord.MessageEmbed()
-			embeed.setTitle("Calcul De La Latence Du Bot Et De L'API De Discord...")
+			embeed.setTitle("Calcul de la latence du bot et de l'API de Discord...")
 			embeed.addField("Ping", `Calcul en cours`, true)
 			embeed.addField("Latence", `${client.ws.ping}ms`, true)
 			embeed.setColor(color)
@@ -39,7 +39,7 @@ module.exports = {
 
 			let msg = await message.channel.send(embeed)
 			let embed = new Discord.MessageEmbed()
-			embed.setTitle("Voici La Latence Du Bot Et De L'API De Discord")
+			embed.setTitle("Voici la latence du bot et de l'API de Discord")
 			embed.addField("Ping", `${msg.createdAt - message.createdAt + "ms"}`, true)
 			embed.addField("Latence", `${client.ws.ping}ms`, true)
 			embed.setColor(color)
