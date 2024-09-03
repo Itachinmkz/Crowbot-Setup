@@ -36,12 +36,12 @@ module.exports = {
 
 				const ChannelInfo = new Discord.MessageEmbed()
 
-					.setTitle(`Voici Les Informations Du Channel : ${channel.name}`)
+					.setTitle(`Voici les informations du salon : ${channel.name}`)
 					.addField(`Nom`, `${channel.name}`, true)
-					.addField(`Description`, `${channel.topic !== null ? channel.topic : 'Aucune Description'}`, true)
+					.addField(`Description`, `${channel.topic !== null ? channel.topic : 'Aucune description'}`, true)
 					.addField(`ID`, `${channel.id}`, true)
 					.addField(`NSFW`, `${channel.nsfw ? `Oui` : `Non`}`, true)
-					.addField(`Catégorie`, `${channel.parent !== null ? channel.parent : 'Non Catégorisé'}\n${channel.parentID !== null ? `(${channel.parentID})` : ''}`, true)
+					.addField(`Catégorie`, `${channel.parent !== null ? channel.parent : 'Non catégorisé'}\n${channel.parentID !== null ? `(${channel.parentID})` : ''}`, true)
 					.addField(`Position dans la catégorie`, `${channel.position + 1}`, true)
 					.addField(`Date de création`, `<t:${Date.parse(channel.createdAt) / 1000}:d> (<t:${Date.parse(channel.createdAt) / 1000}:f>)`, true)
 					.setColor(color)
@@ -56,7 +56,7 @@ module.exports = {
 
 				const CategoryInfo = new Discord.MessageEmbed()
 
-					.setTitle(`Voici Les Informations De La Catégorie : ${channel.name}`)
+					.setTitle(`Voici les informations de la catégorie : ${channel.name}`)
 					.addField(`Nom`, `${channel.name}`, true)
 					.addField(`ID`, `${channel.id}`, true)
 					.addField(`Salons`, `${channel.children.size}`, true)
@@ -74,12 +74,12 @@ module.exports = {
 
 				const VoiceInfo = new Discord.MessageEmbed()
 
-					.setTitle(`Voici Les Informations Du Vocal : ${channel.name}`)
+					.setTitle(`Voici les informations du salon vocal : ${channel.name}`)
 					.addField(`Nom`, `${channel.name}`, true)
 					.addField(`ID`, `${channel.id}`, true)
 					.addField(`Débit binaire (bitrate)`, `${channel.bitrate / 1000 + 'kbps'}`, true)
 					.addField(`Membres connectés`, `${channel.members.size}`, true)
-					.addField(`Limite d'utilisateur`, `${channel.userLimit === 0 ? 'Aucune Limite' : channel.userLimit}`, true)
+					.addField(`Limite d'utilisateurs`, `${channel.userLimit === 0 ? 'Aucune limite' : channel.userLimit}`, true)
 					.addField(`Date de création`, `<t:${Date.parse(channel.createdAt) / 1000}:d> (<t:${Date.parse(channel.createdAt) / 1000}:f>)`, true)
 					.setColor(color)
 					.setTimestamp()
